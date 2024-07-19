@@ -1,15 +1,12 @@
+import './App.css';
+import { Header } from './components/Header/Header';
 
-import './App.css'
-
-function App() {
-
+export const App = () => {
   return (
     <>
-      <div className='text-4xl'>
-      helo
-       </div>
+      <div>
+        <Header />
+      </div>
     </>
-  )
-}
-
-export default App
+  );
+};
