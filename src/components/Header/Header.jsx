@@ -1,4 +1,4 @@
-import logo from '../Header/logo.png';
+import logo1 from '../Header/logo1.png';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { IoIosSearch } from 'react-icons/io';
 import { MdOutlineRefresh } from 'react-icons/md';
@@ -12,9 +12,9 @@ export const Header = () => {
         <div className='p-4 text-xl'>
           <RxHamburgerMenu className='size-7 text-gray-500' />
         </div>
-        <img src={logo} className='h-10 w-8'></img>
+        <img src={logo1} className='h-10 w-10'></img>
 
-        <div className='text-3xl font-semibold text-gray-500'>Keep</div>
+        <div className='text-3xl font-semibold text-gray-500'>Docs</div>
 
         <div className='relative md:ml-24'>
           <div className='flex-grow'></div>
