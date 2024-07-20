@@ -1,4 +1,5 @@
 import './App.css';
+import { Body } from './components/Body/Body';
 import { Header } from './components/Header/Header';
 
 export const App = () => {
@@ -6,6 +7,7 @@ export const App = () => {
     <>
       <div>
         <Header />
+        <Body />
       </div>
     </>
   );
