@@ -1,0 +1,33 @@
+.ql-editor {
+  @apply bg-white w-[8.5in] min-h-[11in] p-[1in] m-4 shadow-md bg-orange-400;
+}
+
+.ql-container .ql-snow {
+  @apply border-none flex justify-center;
+}
+.container {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: white;
+  background-color: brown;
+}
+.container .ql-container .ql-snow .ql-disabled {
+  border: white;
+  display: flex;
+  justify-content: center;
+  background-color: aqua;
+}
+
+.ql-container .ql-snow .ql-disabled {
+  border: none;
+}
+
+.container .ql-toolbar .ql-snow {
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  width: 40;
+  margin-top: 40;
+}
