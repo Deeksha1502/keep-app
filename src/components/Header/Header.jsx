@@ -1,5 +1,5 @@
 import logo1 from '../Header/logo1.png';
-import { RxHamburgerMenu } from 'react-icons/rx';
+
 import { IoIosSearch } from 'react-icons/io';
 import { MdOutlineRefresh } from 'react-icons/md';
 import { FaListUl } from 'react-icons/fa';
@@ -7,16 +7,13 @@ import { IoSettingsOutline } from 'react-icons/io5';
 
 export const Header = () => {
   return (
-    <div>
+    <div className='ml-16'>
       <div className='flex flex-row gap-3 p-3 items-center'>
-        <div className='p-4 text-xl'>
-          <RxHamburgerMenu className='size-7 text-gray-500' />
-        </div>
         <img src={logo1} className='h-10 w-10'></img>
 
         <div className='text-3xl font-semibold text-gray-500'>Docs</div>
 
-        <div className='relative md:ml-24'>
+        <div className='relative  flex-grow md:ml-24'>
           <div className='flex-grow'></div>
           <input
             className='block w-60 md:w-[900px] p-4 ps-10 mx-auto text-gray-900 border border-gray-300 rounded-lg bg-gray-50  outline-none text-md '

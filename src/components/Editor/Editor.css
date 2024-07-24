@@ -1,0 +1,55 @@
+.ql-editor {
+  @apply bg-white w-[8.5in] min-h-[11in] p-[1in] m-4 shadow-md;
+}
+
+.ql-container .ql-snow {
+  @apply border-none flex justify-center;
+}
+.container {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: white;
+}
+.container .ql-container .ql-snow .ql-disabled {
+  border: white;
+  display: flex;
+  justify-content: center;
+}
+
+.ql-container .ql-snow .ql-disabled {
+  border: none;
+}
+
+.container .ql-toolbar .ql-snow {
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  width: 40;
+  margin-top: 40;
+}
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.save-pdf-button {
+  margin-top: 10px;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: #4c74af;
+  width: 200px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: large;
+}
+
+.save-pdf-button:hover {
+  background-color: #45a049;
+}
