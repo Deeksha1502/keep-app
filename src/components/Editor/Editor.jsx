@@ -5,11 +5,13 @@ import 'react-quill/dist/quill.snow.css';
 import './Editor.css';
 import { io } from 'socket.io-client';
 import Quill from 'quill';
+import html2pdf from 'html2pdf.js';
 
 export const Editor = () => {
   const { id: documentId } = useParams();
   const [socket, setSocket] = useState();
   const [quill, setQuill] = useState();
+  const SAVE_DURATION_MS = 2000;
 
   console.log(documentId);
 
@@ -29,8 +31,11 @@ export const Editor = () => {
     console.log('setting up..');
 
     socket.once('load-document', (document) => {
+      console.log('document loaded', document);
+
       quill.setContents(document);
       quill.enable();
+      console.log('quill editor enabled');
     });
     socket.emit('get-document', documentId);
   }, [socket, quill, documentId]);
@@ -46,6 +51,19 @@ export const Editor = () => {
       socket.off('receive-changes', handler);
     };
   }, [socket, quill]);
+
+  useEffect(() => {
+    if (socket == null || quill == null) return;
+
+    const interval = setInterval(() => {
+      const contents = quill.getContents();
+      console.log('saving documents', contents);
+      socket.emit('save-documents', contents);
+    }, SAVE_DURATION_MS);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [socket, quill, SAVE_DURATION_MS]);
 
   useEffect(() => {
     if (socket == null || quill == null) return;
@@ -68,10 +86,31 @@ export const Editor = () => {
     wrapper.append(editor);
 
     const q = new Quill(editor, { theme: 'snow' });
-    q.disable(false);
+    q.disable();
     q.setText('Loading..');
     setQuill(q);
   }, []);
 
-  return <div className='container' ref={wrapperRef}></div>;
+  const handleSavePDF = () => {
+    const saveContent = document.querySelector('.ql-editor');
+    if (saveContent) {
+      const opt = {
+        margin: 1,
+        filename: `document_${documentId}.pdf`,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+      };
+      html2pdf().from(saveContent).set(opt).save();
+    }
+  };
+
+  return (
+    <div className='editor-container'>
+      <div className='container' ref={wrapperRef}></div>
+      <button onClick={handleSavePDF} className='save-pdf-button'>
+        Save as pdf
+      </button>
+    </div>
+  );
 };
