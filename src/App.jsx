@@ -1,6 +1,12 @@
 import './App.css';
+
 // import { Body } from './components/Body/Body';
 import { Editor } from './components/Editor/Editor';
+
+
+import { Body } from './components/Body/Body';
+
+
 import { Header } from './components/Header/Header';
 import { v4 as uuidV4 } from 'uuid';
 import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
@@ -25,6 +31,7 @@ export const App = () => {
   }, [navigate]);
 
   return (
+
     <Router>
       <div className='flex'>
         <Sidenav />
@@ -49,6 +56,12 @@ export const App = () => {
             />
           </Routes>
         </div>
+
+    <>
+      <div>
+        <Header />
+        <Body />
+
       </div>
     </Router>
   );
