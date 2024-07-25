@@ -57,8 +57,8 @@ export const Editor = () => {
 
     const interval = setInterval(() => {
       const contents = quill.getContents();
-      console.log('saving documents', contents);
-      socket.emit('save-documents', contents);
+      console.log('saving document', contents);
+      socket.emit('save-document', contents);
     }, SAVE_DURATION_MS);
     return () => {
       clearInterval(interval);

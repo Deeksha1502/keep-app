@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "express": "^4.19.2",
     "html2pdf.js": "^0.10.2",
     "quill": "^2.0.2",
     "react": "^18.3.1",
@@ -20,8 +21,13 @@
     "react-router": "^6.25.1",
     "react-router-dom": "^6.25.1",
     "socket.io-client": "^4.7.5",
+<<<<<<< HEAD
+    "uuid": "^10.0.0",
+    "uuidv4": "^6.2.13"
+=======
 
     "uuid": "^10.0.0"
+>>>>>>> 664925c70d832e238dd2f6377317eea9eff52d4b
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
