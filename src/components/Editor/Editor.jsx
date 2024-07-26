@@ -106,7 +106,7 @@ export const Editor = () => {
   };
 
   return (
-    <div className='editor-container'>
+    <div className='container'>
       <div className='container' ref={wrapperRef}></div>
       <button onClick={handleSavePDF} className='save-pdf-button'>
         Save as pdf
